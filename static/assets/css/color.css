@@ -1,0 +1,59 @@
+html,
+body {
+  background-color: #fff;
+}
+
+body {
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #233b8f;
+}
+
+a, a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+a.dotted, a.dotted:hover {
+    border-bottom: 1px dotted #333;
+    text-decoration: none;
+}
+
+
+
+.error {
+    outline: 1px Solid Red;
+}
+ 
+.navbar-pattern {
+    background-image: url('/assets/img/bg1.png');
+}
+
+ 
+#internet
+{
+    color: #fff;
+    background-image:  url('/assets/img/bg2.jpg');
+    background-position: bottom center;
+    background-size: cover;
+}
+
+#internet h1, h2, h3, h4, h5 {
+    color: #fff;
+}
+
+#internet a, #internet a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#internet a.dotted, #internet a.dotted:hover {
+    border-bottom: 1px dotted #fff;
+    text-decoration: none;
+}
+
+#login-form {
+    /*outline: 1px Solid #fff;*/
+}

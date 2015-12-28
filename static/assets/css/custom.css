@@ -1,0 +1,276 @@
+/*
+ * Globals
+ */
+
+/*
+ * Base structure
+ */
+
+@font-face {
+  font-family: ubuntu;
+  src: url(/assets/css/fonts/ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: ubuntu;
+  font-weight: bold;
+  src: url(/assets/css/fonts/ubuntu/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+  font-family: ubuntu;
+  font-style: italic;
+  src: url(/assets/css/fonts/ubuntu/Ubuntu-Italic.ttf);
+}
+
+html,
+body {
+    height: 100%;
+    font-family: ubuntu;
+}
+body {
+    /*padding-top: 60px;*/
+}
+
+a { 
+    cursor: pointer;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.center-block {
+    margin: 0 auto;
+    float:none;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+/*
+ * Header
+ */
+ 
+.navbar-pattern {
+    min-height: 60px;
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/*
+ * Body
+ */
+ 
+#internet
+{
+    text-align: center;
+    overflow-y:auto;
+    height:100%;
+}
+
+#contact-us {
+    
+}
+
+#login-form {
+    
+}
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#agreement-modal h2,
+#agreement-modal h3,
+#agreement-modal h4,
+#agreement-modal h5,
+#agreement-modal h6 {
+  margin-top: 0;
+  color: #333;
+}
+
+#wrapper {
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  outline: none;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+.btn {
+    width: 150px;
+    /*color: #fff;
+    background-color: #1c469e;
+    outline: 4px solid #1c469e;
+    border: 1px solid #fff;
+    font-size: 1em;*/
+}
+
+.btn.width-auto {
+    width: auto;
+}
+
+.form-submit:hover, .form-submit:active, .form-submit:visited {
+    transform: scale(1.02);
+}
+
+.btn:hover, .btn:active, .btn:visited {
+    /*outline: 4px solid #1c469e;
+    border: 1px solid #fff;
+    color: #fff;
+    transform: scale(1.02);*/
+}
+
+.btn.grey {
+/*    background-color: #c0c0c0;
+    outline: 4px solid #c0c0c0;*/
+}
+
+.btn.fright {
+    float: right;
+}
+
+.btn.white {
+/*    background-color: #fff;
+    outline: 4px solid #fff;
+    color: #c0c0c0;
+    border: 1px solid #c0c0c0;*/
+}
+
+.btn.white.active {
+/*    color: #1c469e;
+    border: 1px solid #1c469e;*/
+}
+
+.btn.tariffs {
+/*    width: 150px;;
+    font-size: .6em;
+    margin: .5em;*/
+}
+
+ol.modal-list {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+ol.modal-list > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol.modal-list > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;    
+}
+
+li ol.modal-list > li {
+  margin: 0;
+  margin-bottom: 0.6em;
+}
+
+li ol.modal-list > li:before {
+  content: counters(item, ".") " ";
+}
+
+@media (max-width: 420px){
+    
+    .btn {
+        width: 80%;
+        display: block;
+        color: #fff;
+        background-color: #1c469e;
+        outline: 4px solid #1c469e;
+        border: 1px solid #fff;
+        font-size: 1em;
+        margin: 1em auto;
+    }
+    
+    .btn.tariffs {
+        width: 80%;
+        margin: 1em auto;
+    }
+    
+    .btn.fright {
+        float: none;
+    }
+
+}
