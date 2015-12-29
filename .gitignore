@@ -1,4 +1,5 @@
 settings.py
+test*.py
 .vimrc
 .git/
 *.pyc
