@@ -2,7 +2,7 @@ from tornado import gen
 from tornado_mysql.pools import Pool
 
 def adopt_mac(mac):
-    return mac.replace(':','')
+    return mac.replace(':','').upper()
 
 
 class DB(object):
