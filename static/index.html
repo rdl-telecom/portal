@@ -8,23 +8,25 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="favicon.ico">
-        
+
         <title>Cover Template for Bootstrap</title>
+        
+        <script src="/assets/js/ga.js"></script>
         
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        
+
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-        
+
         <!-- Custom styles for this template -->
         <link href="/assets/css/custom.css" rel="stylesheet">
         <link href="/assets/css/color.css" rel="stylesheet">
-        
+        <link rel="stylesheet" href="/assets/css/carousel.css">
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="/bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
         <script src="/bootstrap/js/ie-emulation-modes-warning.js"></script>
-        
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="/bootstrap/js/html5shiv.min.js"></script>
@@ -47,25 +49,13 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#internet">Интернет</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Фильмы <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Комедии</a></li>
-                                <li><a href="#">Боевики</a></li>
-                                <li><a href="#">Сериалы</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Для детей</li>
-                                <li><a href="#">Полнометражные мультфильмы</a></li>
-                                <li><a href="#">Многосерийные мультфильмы</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#myCarousel">Экскурсии</a></li>
                         <li><a href="#contact-us">Контакты</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-            
+
         <div class="container-full" id="internet">
             <div class="site-wrapper">
                 <div class="vertical-center-row">
@@ -100,44 +90,151 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Carousel
+
+    <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      <!-- <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-      </ol>
+      </ol> -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img class="first-slide" src="assets/img/carousel/1paris.jpg" alt="First slide">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Рекламный контент №1</h1>
-              <p>Тут могут размещаться большие графические баннеры вместо серого фона и текстовые поисания действующих акций.</p>
+            <div class="contents carousel-caption col-md-10">
+                <div class="breadcrumbs"> Франция → Париж </div>
+                <h2>Мини-группы в Париже</h2>
+                <div class="clearfix"></div>
+                <div class="contents-info-wrapper">
+                    <div class="contents-info">
+                        <div class="discount"> Скидки 45% </div>
+                        <div class="price"> <span class="p2">от</span> <span class="p1">15€</span> </div>
+                        <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
+                        <hr>
+                        <p> Модный, яркий, чудесный, неповторимый, поражающий воображение — это все Париж. Он наполнен тысячами незабываемых красот и чудесных видов. </p>
+                    </div>
+                    <div class="clearfix"></div> <a href="http://weatlas.com/place/france/paris?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Париже →</a>
+                </div>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img class="second-slide" src="assets/img/carousel/2prague.jpg" alt="Second slide">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Рекламный контент №2</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
+            <div class="contents carousel-caption col-md-10">
+                    <div class="breadcrumbs"> Чехия → Прага </div>
+                    <h2>Мини-группы в Праге</h2>
+                    <div class="clearfix"></div>
+                    <div class="contents-info-wrapper">
+                        <div class="contents-info">
+                            <div class="discount"> Скидки 45% </div>
+                            <div class="price"> <span class="p2">от</span> <span class="p1">15€</span> </div>
+                            <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
+                            <hr>
+                            <p>Город с древней историей и древними памятниками искусства, но с новыми впечатлениями и яркими эмоциями, остающимися в душе каждого туриста.</p>
+                        </div>
+                        <div class="clearfix"></div> <a href="http://weatlas.com/place/czech/prague?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Праге →</a>
+                    </div>
+                </div>
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <img class="third-slide" src="assets/img/carousel/3rome.jpg" alt="Third slide">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
+            <div class="contents carousel-caption col-md-10">
+                    <div class="breadcrumbs"> Италия → Рим </div>
+                    <h2>Мини-группы в Риме</h2>
+                    <div class="clearfix"></div>
+                    <div class="contents-info-wrapper">
+                        <div class="contents-info">
+                            <div class="discount"> Скидки 45% </div>
+                            <div class="price"> <span class="p2">от</span> <span class="p1">25€</span> </div>
+                            <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
+                            <hr>
+                            <p>Рим — это не просто столица яркой и солнечной Италии, это ее символ, который хранит древнюю историю начала европейского государства.</p>
+                        </div>
+                        <div class="clearfix"></div> <a href="http://weatlas.com/place/italy/roma?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Риме →</a>
+                    </div>
+                </div>
           </div>
+        </div>
+        <div class="item">
+          <img class="fourth-slide" src="assets/img/carousel/8thai.jpg" alt="Second slide">
+          <div class="container">
+            <div class="contents carousel-caption col-md-10">
+                    <div class="breadcrumbs"> Азия → Таиланд </div>
+                    <h2>Экскурсия на остров Джеймса Бонда</h2>
+                    <div class="clearfix"></div>
+                    <div class="contents-info-wrapper">
+                        <div class="contents-info">
+                            <div class="contents-info-header">
+                                <div class="price" style="margin-left: 22px;">
+                                    <span class="p1">49$</span>
+                                    <span class="p2"> за группу</span>
+                                </div>
+                                <div class="info">
+                                    <img class="info-icon info-icon-time" src="assets/img/carousel/time.png" style="margin-left: 42px; margin-top: -1px;">
+                                    <span style="margin-left: 41px;">1 день</span>
+                                    <img class="info-icon info-icon-time" src="assets/img/carousel/boat.png" style="margin-left: 57px;margin-top: 0px;">
+                                    <span style="margin-left: 56px;">на катере</span> </div>
+                            </div>
+                            <hr>
+                            <p>Остров Джеймса Бонда — самый известный из островов залива Пханг-Нга. Залив стал одним из самых красивых Национальных парков Таиланда.</p>
+                        </div>
+                        <div class="clearfix"></div> <a href="http://weatlas.com/excursions/8035?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Подробнее о экскурсии →</a>
+                    </div>
+                </div>
+          </div>
+        </div>
+        <div class="item">
+            <img class="fifth-slide" src="assets/img/carousel/9thai.jpg" alt="Third slide">
+            <div class="container">
+                <div class="contents carousel-caption col-md-10">
+                    <div class="breadcrumbs"> Азия → Таиланд </div>
+                    <h2>Посещение фермы слонов на юге Пхукета</h2>
+                    <div class="clearfix"></div>
+                    <div class="contents-info-wrapper">
+                        <div class="contents-info">
+                            <div class="contents-info-header">
+                                <div class="price" style="margin-left: 22px;">
+                                    <span class="p1">100$</span>
+                                    <span class="p2"> за группу</span>
+                                </div>
+                                <div class="info">
+                                    <img class="info-icon info-icon-time" src="assets/img/carousel/time.png" style="margin-left: 42px; margin-top: -1px;">
+                                    <span style="margin-left: 41px;">3 часа</span>
+                                    <img class="info-icon info-icon-walk" src="assets/img/carousel/walk.png" style="margin-left: 83px;margin-top: -2px;">
+                                    <span style="margin-left: 77px;">пешая</span> </div>
+                            </div>
+                            <hr>
+                            <p> Во время экскурсии вы услышате рассказы о острове и его жителях, а самое главное — сможете проехать на слонах по холмам с видом на море. </p>
+                        </div>
+                        <div class="clearfix"></div> <a href="http://weatlas.com/excursions/2435?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Подробнее о экскурсии →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img class="sixth-slide" src="assets/img/carousel/18moscow.jpg" alt="Second slide">
+            <div class="container">
+                <div class="contents carousel-caption col-md-10">
+                    <div class="breadcrumbs"> Россия → Москва </div>
+                    <h2>140 экскурсий в Москве</h2>
+                    <div class="clearfix"></div>
+                    <div class="contents-info-wrapper">
+                        <div class="contents-info">
+                             <div class="contents-info-header">
+                            <div class="price" style="margin-left: 22px;"> <span class="p2">от</span> <span class="p1">700Р</span> </div>
+                            <div class="info info-m" style="margin-left: 180px"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
+                             </div><hr>
+                            <p>В Москве множество достопримечательностей и памятников истории, которые символизируют общее культурное наследие самого города и всей России.</p>
+                        </div>
+                        <div class="clearfix"></div> <a href="http://weatlas.com/place/russia/moscow?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Экскурсии в Москве →</a>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -149,41 +246,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sx-12">
-                <h1>Лучшие фильмы в дорогу</h1>
-            </div>
-        </div>
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="http://img-serv.vidimax.ru:8000/images/34/34533bc0-288f-408a-897d-bded903f9d35.jpg.resize?w=140" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">Скачать с собой &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="http://img-serv.vidimax.ru:8000/images/70/702781c8-47b3-438a-89f3-f4431ee6f08d.jpg.resize?w=140" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">Смотреть online &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->    
-    </div>
-        
-        <hr class="featurette-divider" />
-        
         <div class="container" id="contact-us">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12">
@@ -225,7 +288,7 @@
                 </div>
             </div>
         </div>
-        
+
         <hr class="featurette-divider" />
         <footer>
             <div class="container">
@@ -325,7 +388,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
@@ -333,13 +396,13 @@
         <script src="/bootstrap/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-        
+
         <link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/intlTelInput.css" />
         <script src="/assets/js/jquery.magnific-popup.min.js"></script>
         <script src="/assets/js/intlTelInput.min.js"></script>
         <script type="text/javascript" src="/assets/js/jquery.nicescroll.min.js"></script>
-        
+
         <script src="/assets/js/custom.js"></script>
     </body>
 </html>

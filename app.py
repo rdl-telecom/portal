@@ -6,6 +6,7 @@ from tornado.httpserver import HTTPServer
 
 from services.auth import Auth
 from services.db import DB
+from services.rabbit import Consumer
 from handlers.auth import AuthHandler
 import settings
 
@@ -28,11 +29,16 @@ class App(Application):
         Application.__init__(self, handlers)
 
 
+def create_rabbit_consumer():
+    consumer = Consumer()
+
 def main():
     application = App()
     server = HTTPServer(application)
     server.listen(80)
-    IOLoop.instance().start()
+    ioloop = IOLoop.instance()
+    create_rabbit_consumer()
+    ioloop.start()
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,207 @@
+.carousel {
+  	height: 500px;
+  	margin-bottom: 60px;
+}
+.carousel-caption {
+  	z-index: 10;
+  	text-align: left;
+  	left: 5%;
+}
+.carousel-control.right,
+.carousel-control:focus,
+.carousel-control:hover {
+	z-index: 100;
+}
+.carousel .item {
+  	height: 500px;
+  	background-color: #777;
+  	overflow: hidden;
+}
+
+.carousel-inner > .item > img {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	min-width: 100%;
+  	min-height: initial;
+}
+
+.carousel-inner .contents {
+	position: relative;
+	z-index: 2;
+	font-family: "Helvetica Neue", HElvetica, Arial, sans-serif;
+	list-style: none;
+	color: #000;
+	/*width: 1170px;*/
+	behavior: url(/assets/PIE.htc);
+}
+.carousel-inner .contents .breadcrumbs {
+	margin-top: 60px;
+	color:white;
+	margin-left: 22px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.25),0 1px 15px rgba(0,0,0,0.5);
+	display: inline-block;
+	font-size: 20px;
+	display: block;
+}
+.carousel-inner .contents h2 {
+	font-size: 32px;
+	background: #233b8f;
+	font-weight: bold;
+	padding: 10px 10px 10px 22px;
+	display: inline-block;
+	margin: 0;
+	margin-top: 20px;
+	color: white;
+}
+.carousel-inner .contents .contents-info-wrapper {
+	position: absolute;
+	top: 310px;
+}
+.carousel-inner .contents .contents-info {
+	background: white;
+	display: inline-block;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: white;
+	color: #333;
+	/*margin-top: 130px;*/
+	width: 410px;
+	height: 126px;
+}
+.clearfix {
+	clear: both;
+}
+.hero-btn {
+	margin-top: 0px;
+	width: 410px;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	background: #fb3677;
+	display: inline-block;
+	padding: 16px 0 13px 0;
+	text-align: center;
+	text-decoration: none;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	text-transform: uppercase;
+
+}
+.hero-btn:hover{
+	background: #f20f5a;
+	text-decoration: underline;
+	color: #FFF;
+}
+
+.carousel-inner .discount {
+	background: url("../img/carousel/dbox.png");
+	width: 114px;
+	height: 29px;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: white;
+	line-height: 29px;
+	padding: 0;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.carousel-inner hr {
+	margin:0;
+	border:0;
+	border-top: 1px dashed #ccc;
+}
+
+.carousel-inner p {
+	font-size: 14px;
+	margin-left: 22px;
+	margin-right: 10px;
+	text-shadow: none;
+}
+
+.carousel-inner .price {
+	display: inline-block;
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 7px;
+}
+
+.carousel-inner .info {
+	display: inline-block;
+	position: absolute;
+	margin-top: 19px;
+	margin-left: 129px;
+	color: #565656;
+}
+
+.carousel-inner .info-m {
+	display: inline-block;
+	position: absolute;
+	margin-top: 17px;
+	margin-left: 72px;
+	color: #565656;
+}
+
+.carousel-inner .info-m span {
+	font-size: 14px;
+}
+
+.carousel-inner .price .p1 {
+	color: #ff006c;
+	font-size: 19px;
+	font-weight: bold
+}
+.carousel-inner .price .p2 {
+	font-size: 14px;
+	color: #565656;
+}
+.carousel-inner .info-icon {
+	position: relative;
+}
+.carousel-inner .info-icon-time{
+    position: absolute;
+    margin-top: 1px;
+    }
+.carousel-inner .info-icon-walk{
+	position: absolute;
+	margin-top: -1px;
+	margin-left: 83px;
+}
+.carousel-inner .info-icon-auto {
+
+}
+.carousel-inner .info span {
+	padding-left: 24px;
+}
+.contents-info-header {
+	    height: 48px;
+}
+
+@media (max-width: 1169px) {
+	.carousel-inner > .item > img {
+		min-height: 100%;
+		max-height: none;
+		max-width: none;
+		min-width: none;
+		height: auto;
+	}
+}
+
+@media (max-width: 470px) {
+	.carousel-inner .contents {
+		left: -7%;
+	}
+	.contents-info p {
+		font-size: 13px;
+		margin: 7px 10px;
+	}
+	.carousel-inner .info-m span {
+		font-size: 12px;
+	}
+	.contents-info-wrapper {
+		left: 9px;
+	}
+}

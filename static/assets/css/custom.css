@@ -32,7 +32,7 @@ body {
     /*padding-top: 60px;*/
 }
 
-a { 
+a {
     cursor: pointer;
 }
 
@@ -72,7 +72,7 @@ a {
 /*
  * Header
  */
- 
+
 .navbar-pattern {
     min-height: 60px;
 }
@@ -92,7 +92,7 @@ a {
 /*
  * Body
  */
- 
+
 #internet
 {
     text-align: center;
@@ -101,40 +101,11 @@ a {
 }
 
 #contact-us {
-    
+
 }
 
 #login-form {
-    
-}
 
-
-
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  height: 500px;
-  margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
 }
 
 /* MARKETING CONTENT
@@ -239,7 +210,7 @@ ol.modal-list > li {
 ol.modal-list > li:before {
   content: counters(item, ".") ". ";
   display: table-cell;
-  padding-right: 0.6em;    
+  padding-right: 0.6em;
 }
 
 li ol.modal-list > li {
@@ -252,7 +223,7 @@ li ol.modal-list > li:before {
 }
 
 @media (max-width: 420px){
-    
+
     .btn {
         width: 80%;
         display: block;
@@ -263,12 +234,12 @@ li ol.modal-list > li:before {
         font-size: 1em;
         margin: 1em auto;
     }
-    
+
     .btn.tariffs {
         width: 80%;
         margin: 1em auto;
     }
-    
+
     .btn.fright {
         float: none;
     }
