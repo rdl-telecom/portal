@@ -1,4 +1,4 @@
-from tornado.web import RequestHandler, MissingArgumentError
+from tornado.web import RequestHandler, MissingArgumentError, asynchronous
 
 
 class AuthHandler(RequestHandler):
@@ -7,6 +7,7 @@ class AuthHandler(RequestHandler):
         self.auth = self.application.auth
         self.radius_realm = self.application.radius_realm
 
+    @asynchronous
     def get(self, *args, **kwargs):
         try:
             print self.ip
