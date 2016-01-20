@@ -9,7 +9,7 @@
         <meta name="author" content="">
         <link rel="icon" href="favicon.ico">
 
-        <title>Авторизация</title>
+        <title>Authorization</title>
 
         <script src="/assets/js/ga.js"></script>
 
@@ -34,258 +34,66 @@
         <![endif]-->
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-pattern navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img src="/assets/img/logo.png" />
-                    </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#myCarousel">Экскурсии</a></li>
-                        <li><a href="#contact-us">Контакты</a></li>
-                        <li><a href="/index_en.html">EN</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
-
         <div class="container-full" id="internet">
             <div class="site-wrapper">
                 <div class="vertical-center-row">
                     <div class="container">
                         <div class="row">
-                            <!-- <div class="col-lg-6 col-md-8 col-xs-12 center-block" id="login-form">
-                                <h1 class="cover-heading">Необходима авторизация</h1>
-                                <p>Пожалуйста, введите Ваш номер телефона и подтвердите идентификацию, введя полученный из СМС сообщения код.</p>
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="exampleInputEmail3">Телефон: </label>
-                                        <input type="phone" class="form-control phone-number" id="exampleInputEmail3" placeholder="">
-                                    </div>
-                                    <button type="submit" class="btn btn-default" style="margin-top: -7px;">Получить код</button>
-                                </form>
-                                <p>Прохождение идентификации является фактом принятия <a href="" class="dotted showAgreement">оферты</a>.</p>
-                                <p><a href="" class="dotted" id="show-confirm-form">У меня уже есть код доступа</a></p>
-                            </div>
-                            <div class="col-lg-6 col-md-8 col-xs-12 center-block hidden" id="confirm-form">
-                                <h1 class="cover-heading">Подтверждение авторизации</h1>
+                            <div class="col-lg-6 col-md-8 col-xs-12 center-block" id="confirm-form">
+                                <!-- <h1 class="cover-heading">Подтверждение авторизации</h1>
                                 <p>Пожалуйста, введите код из СМС сообщения</p>
-                                <form class="form-inline">
+                                <form class="form-inline" action="enterweb.html" action="post">
                                     <div class="form-group">
-                                        <label class="sr-only" for="auth-confirm-code">Телефон: </label>
-                                        <input type="text" class="form-control" id="auth-confirm-code" placeholder="">
+                                        <label class="sr-only" for="auth-confirm-code">Код: </label>
+                                        <input type="text" name="code" class="form-control" id="auth-confirm-code">
                                     </div>
-                                    <button type="submit" class="btn btn-default" id="confirm">Авторизоваться</button>
-                                </form>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <!-- <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-      </ol> -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide" src="assets/img/carousel/1paris.jpg" alt="First slide">
-          <div class="container">
-            <div class="contents carousel-caption col-md-10">
-                <div class="breadcrumbs"> Франция → Париж </div>
-                <h2>Мини-группы в Париже</h2>
-                <div class="clearfix"></div>
-                <div class="contents-info-wrapper">
-                    <div class="contents-info">
-                        <div class="discount"> Скидки 45% </div>
-                        <div class="price"> <span class="p2">от</span> <span class="p1">15€</span> </div>
-                        <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
-                        <hr>
-                        <p> Модный, яркий, чудесный, неповторимый, поражающий воображение — это все Париж. Он наполнен тысячами незабываемых красот и чудесных видов. </p>
-                    </div>
-                    <div class="clearfix"></div> <a href="http://weatlas.com/place/france/paris?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Париже →</a>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="assets/img/carousel/2prague.jpg" alt="Second slide">
-          <div class="container">
-            <div class="contents carousel-caption col-md-10">
-                    <div class="breadcrumbs"> Чехия → Прага </div>
-                    <h2>Мини-группы в Праге</h2>
-                    <div class="clearfix"></div>
-                    <div class="contents-info-wrapper">
-                        <div class="contents-info">
-                            <div class="discount"> Скидки 45% </div>
-                            <div class="price"> <span class="p2">от</span> <span class="p1">15€</span> </div>
-                            <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
-                            <hr>
-                            <p>Город с древней историей и древними памятниками искусства, но с новыми впечатлениями и яркими эмоциями, остающимися в душе каждого туриста.</p>
-                        </div>
-                        <div class="clearfix"></div> <a href="http://weatlas.com/place/czech/prague?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Праге →</a>
-                    </div>
-                </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="assets/img/carousel/3rome.jpg" alt="Third slide">
-          <div class="container">
-            <div class="contents carousel-caption col-md-10">
-                    <div class="breadcrumbs"> Италия → Рим </div>
-                    <h2>Мини-группы в Риме</h2>
-                    <div class="clearfix"></div>
-                    <div class="contents-info-wrapper">
-                        <div class="contents-info">
-                            <div class="discount"> Скидки 45% </div>
-                            <div class="price"> <span class="p2">от</span> <span class="p1">25€</span> </div>
-                            <div class="info info-m"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
-                            <hr>
-                            <p>Рим — это не просто столица яркой и солнечной Италии, это ее символ, который хранит древнюю историю начала европейского государства.</p>
-                        </div>
-                        <div class="clearfix"></div> <a href="http://weatlas.com/place/italy/roma?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Смотреть экскурсии в Риме →</a>
-                    </div>
-                </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="fourth-slide" src="assets/img/carousel/8thai.jpg" alt="Second slide">
-          <div class="container">
-            <div class="contents carousel-caption col-md-10">
-                    <div class="breadcrumbs"> Азия → Таиланд </div>
-                    <h2>Экскурсия на остров Джеймса Бонда</h2>
-                    <div class="clearfix"></div>
-                    <div class="contents-info-wrapper">
-                        <div class="contents-info">
-                            <div class="contents-info-header">
-                                <div class="price" style="margin-left: 22px;">
-                                    <span class="p1">49$</span>
-                                    <span class="p2"> за группу</span>
-                                </div>
-                                <div class="info">
-                                    <img class="info-icon info-icon-time" src="assets/img/carousel/time.png" style="margin-left: 42px; margin-top: -1px;">
-                                    <span style="margin-left: 41px;">1 день</span>
-                                    <img class="info-icon info-icon-time" src="assets/img/carousel/boat.png" style="margin-left: 57px;margin-top: 0px;">
-                                    <span style="margin-left: 56px;">на катере</span> </div>
+                                    <input type="submit" class="btn btn-default" id="confirm" value="Войти в интернет">
+                                </form> -->
+                                <a id="enter-web" class="btn btn-default" href="/" onclick="return false;">Войти в интернет</a>
                             </div>
-                            <hr>
-                            <p>Остров Джеймса Бонда — самый известный из островов залива Пханг-Нга. Залив стал одним из самых красивых Национальных парков Таиланда.</p>
                         </div>
-                        <div class="clearfix"></div> <a href="http://weatlas.com/excursions/8035?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Подробнее о экскурсии →</a>
-                    </div>
-                </div>
-          </div>
-        </div>
-        <div class="item">
-            <img class="fifth-slide" src="assets/img/carousel/9thai.jpg" alt="Third slide">
-            <div class="container">
-                <div class="contents carousel-caption col-md-10">
-                    <div class="breadcrumbs"> Азия → Таиланд </div>
-                    <h2>Посещение фермы слонов на юге Пхукета</h2>
-                    <div class="clearfix"></div>
-                    <div class="contents-info-wrapper">
-                        <div class="contents-info">
-                            <div class="contents-info-header">
-                                <div class="price" style="margin-left: 22px;">
-                                    <span class="p1">100$</span>
-                                    <span class="p2"> за группу</span>
-                                </div>
-                                <div class="info">
-                                    <img class="info-icon info-icon-time" src="assets/img/carousel/time.png" style="margin-left: 42px; margin-top: -1px;">
-                                    <span style="margin-left: 41px;">3 часа</span>
-                                    <img class="info-icon info-icon-walk" src="assets/img/carousel/walk.png" style="margin-left: 83px;margin-top: -2px;">
-                                    <span style="margin-left: 77px;">пешая</span> </div>
-                            </div>
-                            <hr>
-                            <p> Во время экскурсии вы услышате рассказы о острове и его жителях, а самое главное — сможете проехать на слонах по холмам с видом на море. </p>
-                        </div>
-                        <div class="clearfix"></div> <a href="http://weatlas.com/excursions/2435?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Подробнее о экскурсии →</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <img class="sixth-slide" src="assets/img/carousel/18moscow.jpg" alt="Second slide">
-            <div class="container">
-                <div class="contents carousel-caption col-md-10">
-                    <div class="breadcrumbs"> Россия → Москва </div>
-                    <h2>140 экскурсий в Москве</h2>
-                    <div class="clearfix"></div>
-                    <div class="contents-info-wrapper">
-                        <div class="contents-info">
-                             <div class="contents-info-header">
-                            <div class="price" style="margin-left: 22px;"> <span class="p2">от</span> <span class="p1">700Р</span> </div>
-                            <div class="info info-m" style="margin-left: 180px"> <img class="info-icon info-icon-time" src="assets/img/carousel/lighting.png"> <span>Мгновенное подтверждение</span> </div>
-                             </div><hr>
-                            <p>В Москве множество достопримечательностей и памятников истории, которые символизируют общее культурное наследие самого города и всей России.</p>
-                        </div>
-                        <div class="clearfix"></div> <a href="http://weatlas.com/place/russia/moscow?aid=13252&utm_source=rdltrain&utm_medium=landing" class="hero-btn">Экскурсии в Москве →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-
         <div class="container" id="contact-us">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12">
-                    <h1>Контакты</h1>
+                    <h1>Contacts</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-xs-12">
                     <address>
-                        <strong>ООО «РДЛ-Телеком»</strong><br />
-                        105082, Москва<br />
-                        ул. Фридриха Энгельса, д.75, стр.20<br>
+                        <strong>ООО «RDL-Telecom»</strong><br />
+                        105082, Moscow<br />
+                        Fridrikha Engelsa street, 75/20<br>
                     </address>
                     <address>
-                        <strong>Служба поддержки пользователей</strong><br>
+                        <strong>User support service</strong><br>
                         <a href="mailto:support@rdl-telecom.com">support@rdl-telecom.com</a>
                     </address>
                     <address>
-                        <strong>Для рекламодателей</strong><br>
+                        <strong>For advertisers</strong><br>
                         <a href="mailto:marketing@rdl-telecom.com">marketing@rdl-telecom.com</a>
                     </address>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-lg-offset-3 col-md-offset-3">
                     <form action="/mail" method="post" id="feedback">
                         <div class="form-group">
-                            <label class="sr-only" for="feedback-name">Ваше имя: </label>
-                            <input name="name" type="text" class="form-control" id="feedback-name" placeholder="Ваше имя" />
+                            <label class="sr-only" for="feedback-name">Your name: </label>
+                            <input name="name" type="text" class="form-control" id="feedback-name" placeholder="Your name" />
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="feedback-email">E-mail: </label>
                             <input name="email" type="email" class="form-control" id="feedback-email" placeholder="E-mail" />
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="feedback-message">Сообщение: </label>
-                            <textarea name="message" class="form-control" id="feedback-message" rows="5" placeholder="Сообщение"></textarea>
+                            <label class="sr-only" for="feedback-message">Message: </label>
+                            <textarea name="message" class="form-control" id="feedback-message" rows="5" placeholder="Message"></textarea>
                         </div>
-                        <input type="hidden" name="lang" value="ru">
-                        <input type="submit" class="btn btn-primary" value="Отправить сообщение" />
+                        <input type="hidden" name="lang" value="en">
+                        <input type="submit" class="btn btn-primary" value="Send message">
                     </form>
                 </div>
             </div>
@@ -301,7 +109,6 @@
                 </div>
             </div>
         </footer>
-
         <div id="agreement-modal" class="white-popup-block mfp-hide">
             <div class="white-popup-block-cont" id="wrapper" tabindex="0">
                 <h2>Пользовательское соглашение</h2>
@@ -406,5 +213,15 @@
         <script type="text/javascript" src="/assets/js/jquery.nicescroll.min.js"></script>
 
         <script src="/assets/js/custom.js"></script>
+        <script>
+        $(document).ready(function() {
+            setTimeout(function () {
+                $('#enter-web').click(function(e) {
+                    $this = $(this);
+                    window.location.href = $this.attr('href');
+                });
+            }, 5000);
+        });
+        </script>
     </body>
 </html>

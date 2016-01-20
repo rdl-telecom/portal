@@ -1,14 +1,16 @@
 jQuery(function() {
     var telInput = $(".phone-number");
-    
+
+    var lang = $('[name="lang"]').val();
+
     // initialise plugin
     telInput.intlTelInput({
         allowExtensions: false,
         autoFormat: true,
         autoPlaceholder: true,
-        defaultCountry: "ru",
+        defaultCountry: lang,
         nationalMode: false,
-        preferredCountries: ["ru"],
+        preferredCountries: [lang],
         utilsScript: "/assets/js/utils.js"
     });
 
@@ -29,23 +31,23 @@ jQuery(function() {
     telInput.keydown(function() {
         telInput.removeClass("error");
     });
-    
+
     jQuery("#show-confirm-form").click(function(){
         jQuery.showConfrimCode();
         return false;
     });
-    
+
     jQuery("#confirm").click(function(){
         return false;
     });
-    
-    
+
+
     jQuery.showConfrimCode = function(){
         jQuery("#confirm-form").removeClass("hidden");
         jQuery("#login-form").addClass("hidden");
-        
+
     };
-    
+
     jQuery.showAgreement = function() {
         $.magnificPopup.open({
             items: {

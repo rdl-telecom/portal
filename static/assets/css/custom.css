@@ -222,15 +222,29 @@ li ol.modal-list > li:before {
   content: counters(item, ".") " ";
 }
 
+#internet a#enter-web,
+#internet a#enter-web:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.btn {
+  width: auto;
+}
+
+#internet .intl-tel-input .country-list .country-name {
+  color: #333;
+}
+
 @media (max-width: 420px){
 
     .btn {
         width: 80%;
         display: block;
-        color: #fff;
+        /*color: #fff;
         background-color: #1c469e;
         outline: 4px solid #1c469e;
-        border: 1px solid #fff;
+        border: 1px solid #fff;*/
         font-size: 1em;
         margin: 1em auto;
     }
@@ -244,4 +258,7 @@ li ol.modal-list > li:before {
         float: none;
     }
 
+    h2 {
+        font-size: 20px;
+    }
 }

@@ -4,8 +4,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-59394184-1', 'auto');
-ga('set', 'dimension1', 'TST');
-ga('set', 'dimension2', 'Test system (1745)');
+ga('set', 'dimension1', 'UnknownTrainDirection');
+ga('set', 'dimension2', 'UnknownTrainNumber');
 ga('send', 'pageview');
 
 
