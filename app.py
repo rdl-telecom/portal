@@ -37,6 +37,7 @@ class App(Application):
         self.create_mailer()
         self.create_thread_pool()
         self.create_rabbit_publisher()
+        self.create_input_checker()
 
         self.define_urls()
 
