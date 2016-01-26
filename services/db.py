@@ -1,4 +1,5 @@
 import logging
+import traceback
 
 from tornado import gen
 from tornado_mysql.pools import Pool
@@ -12,7 +13,7 @@ def adopt_mac(mac):
 class DB(object):
     def __init__(self, host='127.0.0.1', port=3306, user='root', passwd='', db='mysql'):
         self.pool = Pool(dict(host=host, port=port, user=user, passwd=passwd, db=db),
-                            max_idle_connections=3,
+                            max_idle_connections=5,
                             max_recycle_sec=3,
                             max_open_connections=20)
         logger.debug('Created database connection pool')
@@ -23,10 +24,13 @@ class DB(object):
         try:
             cur = yield self.pool.execute(query)
         except Exception as e:
-            raise gen.Return(e)
+            logger.error(e)
+            logger.debug('DETAILS', exc_info=traceback.format_exc())
+            raise gen.Return(None)
         if cur:
             if fetchone:
                 if cur.rowcount != 1:
+                    logger.debug('RESULT: None')
                     raise gen.Return(None)
                 result = cur.fetchone()
                 logger.debug('RESULT: {}'.format(result))
@@ -48,6 +52,7 @@ class DB(object):
             logger.info('Found code {}'.format(code))
             raise gen.Return(code)
         logger.info('Code not found')
+        raise gen.Return(None)
 
     @gen.coroutine
     def add_user(self, mac, code):

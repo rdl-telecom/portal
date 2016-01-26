@@ -236,6 +236,11 @@ li ol.modal-list > li:before {
   color: #333;
 }
 
+span.showAgreement {
+	text-decoration: underline dotted;
+	cursor: pointer;
+}
+
 @media (max-width: 420px){
 
     .btn {

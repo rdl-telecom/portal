@@ -1,32 +1,38 @@
+import logging
+
 from tornado.web import RequestHandler, MissingArgumentError, asynchronous
+from tornado import gen
+
+logger = logging.getLogger(__name__)
 
 
-class AuthHandler(RequestHandler):
+class CodeHandler(RequestHandler):
+
     def initialize(self):
         self.db = self.application.db
         self.auth = self.application.auth
         self.radius_realm = self.application.radius_realm
 
     @asynchronous
+    @gen.engine
     def get(self, *args, **kwargs):
-        try:
-            print self.ip
-        except:
-            print 'no ip'
         self.ip = self.request.remote_ip
-        self.mac = self._get_mac()
+        self.mac = yield self._get_mac()
 
-        if not self.mac:                                   # No valid MAC address
-            self.redirect('/error.html')
+        redirect_url = self.application.urls['error']
 
-        self.code = self.db.get_user_code(self.mac)
-        if not self.code:                                  # No such user in local DB
-            self.redirect('/index.html')
+        if self.mac:
+            self.code = yield self.db.get_user_code(self.mac)
+            if not self.code:
+                redirect_url = self.application.urls['phone']
+            else:
+                self.authenticated = yield self._authenticate()
+                if self.authenticated:
+                    redirect_url = self.application.urls['enter']
 
-        self.authenticated = self._authenticate()
-        if not self.authenticated:                         # Hmmm... Strange error
-            self.redirect('/error.html')
+        self.redirect(redirect_url)
 
+    @gen.coroutine
     def _authenticate(self):
         user_info = {
             'ip' : self.ip,
@@ -36,12 +42,13 @@ class AuthHandler(RequestHandler):
             'useragent' : self.request.headers.get('User-Agent', '<Unknown>'),
             'language' : self.request.headers.get('Accept-Language', 'ru')
         }
-        future = self.auth.login(**user_info)
+        result = yield self.auth.login(**user_info)
         if future.exception():
-            return False
+            raise gen.Return(False)
         else:
-            return future.result()
+            raise gen.Return(future.result())
 
+    @gen.coroutine
     def _get_mac(self):
         mac = None
         macs = self.get_arguments('mac')
@@ -54,4 +61,4 @@ class AuthHandler(RequestHandler):
                     if ip == self.ip:
                         mac = mac_
                         break
-        return mac
+        raise gen.Return(mac)
