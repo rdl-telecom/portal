@@ -30,7 +30,7 @@ class IndexHandler(RequestHandler):
                 if self.authenticated:
                     redirect_url = self.application.urls['enter']
 
-        self.redirect(redirect_url)
+        self.redirect(redirect_url, status=303)
 
     @gen.coroutine
     def _authenticate(self):

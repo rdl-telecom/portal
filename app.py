@@ -19,6 +19,7 @@ from handlers.phone import PhoneHandler
 from handlers.code import CodeHandler
 from handlers.mail import MailHandler
 
+import aux
 import settings
 
 logger = logging.getLogger('main')
