@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 class PhoneHandler(RequestHandler):
 
     def initialize(self):
-        pass
+        self.user = self.application.users.get(self.request.remote_ip)
 
     @asynchronous
     @gen.engine
@@ -25,5 +25,5 @@ class PhoneHandler(RequestHandler):
         redirect_url = self.application.urls['code']
         if not self.application.checker.is_phone(phone):
             redirect_url = self.request.headers.get('Referer',
-                                   convert_url(self.application.urls['phone'], lang))
+                                            self.application.urls['phone'])
         self.redirect(redirect_url, status=303)

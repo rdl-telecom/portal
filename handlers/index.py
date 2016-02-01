@@ -17,18 +17,30 @@ class IndexHandler(RequestHandler):
     @gen.engine
     def get(self, *args, **kwargs):
         self.ip = self.request.remote_ip
-        self.mac = yield self._get_mac()
-
+        self.user = self.application.users.get(self.ip)
         redirect_url = self.application.urls['error']
+        code = ''
 
-        if self.mac:
-            self.code = yield self.db.get_user_code(self.mac)
-            if not self.code:
-                redirect_url = self.application.urls['phone']
-            else:
-                self.authenticated = yield self._authenticate()
-                if self.authenticated:
+        if not self.user:
+            mac = yield self._get_mac()
+
+            if mac:
+                code = yield self.db.get_user_code(mac)
+                if not code:
+                    redirect_url = self.application.urls['phone']
+                    code = ''
+                else:
                     redirect_url = self.application.urls['enter']
+
+                self.application.users.add(self.ip, mac, code)
+        else:
+            if self.user.phone:
+                if self.user.code:
+                    redirect_url = self.application.urls['enter']
+                else:
+                    redirect_url = self.application.urls['code']
+            else:
+                redirect_url = self.application.urls['phone']
 
         self.redirect(redirect_url, status=303)
 

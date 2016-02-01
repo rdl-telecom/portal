@@ -1,7 +1,8 @@
 def get_time(text):
+    mods = { 'S' : 1, 'M' : 60, 'H' : 3600 }
+    seconds = 0
     if text.isdigit():
         seconds = int(text)
-        mods = { 'S' : 1, 'M' : 60, 'H' : 3600 }
     else:
         num = text[:-1]
         suffix = text[-1].upper()

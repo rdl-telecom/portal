@@ -13,6 +13,7 @@ from services.db import DB
 from services.mail import Mailer
 from services.rabbit import Publisher
 from services.system import get_system_name
+from services.users import Users
 
 from handlers.index import IndexHandler
 from handlers.phone import PhoneHandler
@@ -39,6 +40,7 @@ class App(Application):
         self.create_thread_pool()
         self.create_rabbit_publisher()
         self.create_input_checker()
+        self.create_users_sessions()
 
         self.define_urls()
 
@@ -74,12 +76,16 @@ class App(Application):
         self._workers = ThreadPool(settings.NUM_WORKERS)
 
     def create_rabbit_publisher(self):
-        self.rabbit = Publisher(settings.RABBIT_URL, settings.MACS_EXCHANGE,
-                                settings.MACS_EXCHANGE_TYPE, self.system_name, '')
+        self.rabbit = Publisher(settings.RABBIT_URL, settings.EVENT_EXCHANGE,
+                                settings.EVENT_EXCHANGE_TYPE, self.system_name,
+                                settings.EVENT_ROUTING_KEY)
         self.rabbit.connect()
 
     def create_input_checker(self):
         self.checker = Checker()
+
+    def create_users_sessions(self):
+        self.users = Users(settings.MEMCACHE_URLS, aux.get_time(settings.SESSION_TIME))
 
     def define_urls(self):
         self.urls = {

@@ -8,11 +8,12 @@ logger = logging.getLogger(__name__)
 
 class User(object):
 
-    def __init__(self, ip, mac, url='/index.html', lang='ru',
+    def __init__(self, ip, mac, phone='', url='/index.html', lang='ru',
                        code='', mail_count=0, authorized=False):
         logger.debug('Creating user object IP={} MAC={}'.format(ip, mac))
         self.ip = ip
         self.mac = mac
+        self.phone = phone
         self.url = url
         self.lang = lang
         self.code = code
@@ -25,19 +26,27 @@ class User(object):
         return User(**user_dict)
 
     def update_lang(self, lang):
-        logger.debug('Setting user language {}'.format(self))
+        logger.debug('Setting user language: {}'.format(self))
         self.lang = lang
 
     def update_code(self, code):
+        logger.debug('Updating user code: {}'.format(self))
         self.code = code
 
+    def update_phone(self, phone):
+        logger.debug('Updating user phone: {}'.format(self))
+        self.phone = phone
+
     def increase_mail_count(self):
+        logger.debug('Increasing mail_count: {}'.format(self))
         self.mail_count += 1
 
     def authorize(self):
+        logger.debug('Authorizing: {}'.format(self))
         self.authorized = True
 
     def unauthorize(self):
+        logger.debug('Unauthorizing: {}'.format(self))
         self.authorized = False
 
     def json(self):
@@ -45,7 +54,8 @@ class User(object):
 
     def __repr__(self):
         return 'USER: {ip} ({mac}) lang={lang} \
-                authorized={authorized}'.format(**self.__dict__)
+                authorized={authorized} code={code} \
+                phone=+{phone} mail_count={mail_count}'.format(**self.__dict__)
 
 
 class Users(object):
@@ -58,6 +68,7 @@ class Users(object):
                   code='', mail_count=0, authorized=False):
         user = User(ip, mac, url, lang, code, mail_count, authorized)
         self.memcache.set(user.ip, user.json(), self.session_time)
+        return user
 
     def get(self, ip):
         user_json = self.memcache.get(ip)
@@ -65,6 +76,9 @@ class Users(object):
         if user_json:
             user = User.from_json(user_json)
         return user
+
+    def update(self, user):
+        self.memcache.set(user.ip, user.json(), self.session_time)
 
     def delete(self, user):
         self.memcache.delete(user.ip)
