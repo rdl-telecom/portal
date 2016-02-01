@@ -1,15 +1,14 @@
 import logging
 
-from tornado.web import RequestHandler, MissingArgumentError, asynchronous
-from tornado.ioloop import IOLoop
+from tornado.web import asynchronous
 from tornado import gen
 
-from utility import convert_url
+from common import CommonHandler
 
 logger = logging.getLogger(__name__)
 
 
-class MailHandler(RequestHandler):
+class MailHandler(CommonHandler):
 
     @asynchronous
     @gen.engine
@@ -20,7 +19,9 @@ class MailHandler(RequestHandler):
         email = self.get_argument('email', default='<NO EMAIL>').encode('utf-8')
         msg = self.get_argument('message', default='')[:10240].encode('utf-8')
         lang = self.get_argument('lang', default='ru')
-        message = '{} ({}) wrote:\n\n{}\n'.format(name, email, msg)
+
+        message = '{} ({}) wrote:\n\n{}\n\nUser: {}'.format(name, email, msg, self.user)
+
         kwds = {
             'to' : self.application.support_email,
             'subj' : subj,
@@ -28,4 +29,4 @@ class MailHandler(RequestHandler):
         }
         self.application.run_background(self.application.mailer.send, (), kwds)
 
-        self.redirect(self.request.headers.get('Referer', convert_url('index.html', lang)), status=303)
+        self.redirect(self.request.headers.get('Referer', ''), status=303)

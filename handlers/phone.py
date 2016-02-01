@@ -1,17 +1,14 @@
 import logging
 
-from tornado.web import RequestHandler, MissingArgumentError, asynchronous
+from tornado.web import asynchronous
 from tornado import gen
 
-from utility import convert_url
+from common import CommonHandler
 
 logger = logging.getLogger(__name__)
 
 
-class PhoneHandler(RequestHandler):
-
-    def initialize(self):
-        self.user = self.application.users.get(self.request.remote_ip)
+class PhoneHandler(CommonHandler):
 
     @asynchronous
     @gen.engine
