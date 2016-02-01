@@ -12,11 +12,11 @@ class User(object):
                        code='', mail_count=0, authorized=False):
         logger.debug('Creating user object IP={} MAC={}'.format(ip, mac))
         self.ip = ip
-        self.mac = mac
+        self.mac = mac.lower()
         self.phone = phone
         self.url = url
         self.lang = lang
-        self.code = code
+        self.code = code.upper()
         self.mail_count = mail_count
         self.authorized = authorized
 
