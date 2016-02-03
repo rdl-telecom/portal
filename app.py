@@ -12,7 +12,7 @@ from services.check import Checker
 from services.db import DB
 from services.mail import Mailer
 from services.rabbit import Publisher
-from services.system import get_system_name
+from services.system import get_system_name, get_time
 from services.users import Users
 
 from handlers.index import IndexHandler
@@ -22,7 +22,6 @@ from handlers.mail import MailHandler
 from handlers.auth import AuthHandler
 from handlers.lang import LangHandler
 
-import aux
 import settings
 
 logger = logging.getLogger('main')
@@ -93,7 +92,7 @@ class App(Application):
         self.checker = Checker()
 
     def create_users_sessions(self):
-        self.users = Users(settings.MEMCACHE_URLS, aux.get_time(settings.SESSION_TIME))
+        self.users = Users(settings.MEMCACHE_URLS, get_time(settings.SESSION_TIME))
 
     def define_urls(self):
         self.urls = {
