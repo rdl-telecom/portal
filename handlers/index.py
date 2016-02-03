@@ -2,6 +2,7 @@ import logging
 
 from tornado.web import asynchronous
 from tornado import gen
+from tornado import escape
 
 from common import CommonHandler
 
@@ -17,46 +18,28 @@ class IndexHandler(CommonHandler):
     @asynchronous
     @gen.engine
     def get(self, *args, **kwargs):
-        redirect_url = yield self.next_step()
-        self.redirect(redirect_url, status=303)
-
-    @gen.coroutine
-    def next_step(self):
-        redirect_url = None
         if not self.user:
-            redirect_url = yield self.no_session()
+            next_step = yield self.no_session()
         else:
-            redirect_url = yield self.has_session()
-        raise gen.Return(redirect_url)
+            next_step = self.user.step
+        self.render(self.application.urls[next_step], user=self.user)
 
     @gen.coroutine
     def no_session(self):
-        redirect_url = self.application.urls['error']
+        next_step = 'error'
         code = ''
         mac = yield self._get_mac()
 
         if mac:
             code = yield self.db.get_user_code(mac)
             if not code:
-                redirect_url = self.application.urls['phone']
+                next_step = 'phone'
                 code = ''
             else:
-                redirect_url = self.application.urls['enter']
+                next_step = 'enter'
+            self.user = self.application.users.add(self.ip, mac, code=code, step=next_step)
 
-            self.application.users.add(self.ip, mac, code)
-        raise gen.Return(redirect_url)
-
-    @gen.coroutine
-    def has_session(self):
-        redirect_url = None
-        if self.user.phone:
-            if self.user.code:
-                redirect_url = self.application.urls['enter']
-            else:
-                redirect_url = self.application.urls['code']
-        else:
-            redirect_url = self.application.urls['phone']
-        raise gen.Return(redirect_url)
+        raise gen.Return(next_step)
 
     @gen.coroutine
     def _get_mac(self):

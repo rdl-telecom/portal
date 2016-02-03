@@ -19,6 +19,8 @@ from handlers.index import IndexHandler
 from handlers.phone import PhoneHandler
 from handlers.code import CodeHandler
 from handlers.mail import MailHandler
+from handlers.auth import AuthHandler
+from handlers.lang import LangHandler
 
 import aux
 import settings
@@ -49,9 +51,15 @@ class App(Application):
             (r'^/phone$', PhoneHandler),
             (r'^/code$', CodeHandler),
             (r'^/mail$', MailHandler),
-            (r'/(.*)$', StaticFileHandler, {'path':settings.STATIC_PATH})
+            (r'^/auth$', AuthHandler),
+            (r'^/lang?.*$', LangHandler),
+            (r'/(.*)$', StaticFileHandler, { 'path':settings.STATIC_PATH })
         ]
-        Application.__init__(self, handlers)
+        settings_dict = {
+            'static_path' : settings.STATIC_PATH,
+            'template_path' : settings.TEMPLATE_PATH
+        }
+        Application.__init__(self, handlers, **settings_dict)
         logger.debug('Application initialized')
 
     def create_db_connection_pool(self):

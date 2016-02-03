@@ -1,0 +1,9 @@
+{% extends base.html %}
+
+{% block container %}
+    {% if user.lang == 'en' %}
+        {% include phone_en.html %}
+    {% else %}
+        {% include phone_ru.html %}
+    {% end %}
+{% end %}

@@ -29,4 +29,4 @@ class MailHandler(CommonHandler):
         }
         self.application.run_background(self.application.mailer.send, (), kwds)
 
-        self.redirect(self.request.headers.get('Referer', ''), status=303)
+        self.redirect('/', status=303)

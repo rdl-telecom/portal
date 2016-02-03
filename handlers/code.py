@@ -11,15 +11,12 @@ logger = logging.getLogger(__name__)
 class CodeHandler(CommonHandler):
 
     @asynchronous
-    @gen.engine
     def post(self, *args, **kwargs):
-        c = self.get_argument('code', '')
-        logger.debug('Got "code" as {}'.format(c))
-        lang = self.get_argument('lang', 'ru')
-        redirect_url = code
-        if not self.application.checker.is_code(code):
-            redirect_url = self.request.headers.get('Referer',
-                                   self.application.urls['code'])
-        
-        redirect_url = self.application.urls['enter']
-        self.redirect(redirect_url, status=303)
+        code = self.get_argument('code', '')
+        logger.debug('Got "code" as {}'.format(code))
+
+        if self.application.checker.is_code(code):
+#            if code == self.user.code:
+            self.user.next_step('enter')
+            self.application.users.update(self.user)
+        self.redirect('/', status=303)

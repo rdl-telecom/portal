@@ -7,6 +7,9 @@ from common import CommonHandler
 
 logger = logging.getLogger(__name__)
 
+
+class AuthHandler(CommonHandler):
+        
     @asynchronous
     @gen.engine
     def post(self):

@@ -1,0 +1,22 @@
+        <div class="container-full" id="internet">
+            <div class="site-wrapper">
+                <div class="vertical-center-row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-8 col-xs-12 center-block" id="confirm-form">
+                                <h1 class="cover-heading">Authorization confirmation</h1>
+                                <p>Please enter the code from recieved message</p>
+                                <form action="/code" method="post" class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="auth-confirm-code">Код: </label>
+                                        <input type="text" name="code" class="form-control" id="auth-confirm-code">
+                                        <input type="hidden" name="lang" value="en">
+                                    </div>
+                                    <input type="submit" class="btn btn-default" value="Authorize">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

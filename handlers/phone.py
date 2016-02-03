@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 class PhoneHandler(CommonHandler):
 
     @asynchronous
-    @gen.engine
     def post(self, *args, **kwargs):
         p = self.get_argument('phone_number', '')
         logger.debug('Got "phone" as {}'.format(p))
@@ -19,8 +18,7 @@ class PhoneHandler(CommonHandler):
         phone = ''.join([ c for c in p if c.isdigit() ])
         logger.debug('Set phone as {}'.format(phone))
         
-        redirect_url = self.application.urls['code']
-        if not self.application.checker.is_phone(phone):
-            redirect_url = self.request.headers.get('Referer',
-                                            self.application.urls['phone'])
-        self.redirect(redirect_url, status=303)
+        if self.application.checker.is_phone(phone):
+            self.user.next_step('code')
+            self.application.users.update(self.user)
+        self.redirect('/', status=303)

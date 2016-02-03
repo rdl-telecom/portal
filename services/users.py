@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 class User(object):
 
     def __init__(self, ip, mac, phone='', url='/index.html', lang='ru',
-                       code='', mail_count=0, authorized=False):
+                       code='', mail_count=0, authorized=False, step='phone'):
         logger.debug('Creating user object IP={} MAC={}'.format(ip, mac))
         self.ip = ip
         self.mac = mac.lower()
@@ -19,6 +19,7 @@ class User(object):
         self.code = code.upper()
         self.mail_count = mail_count
         self.authorized = authorized
+        self.step = step
 
     @staticmethod
     def from_json(user_json):
@@ -49,13 +50,17 @@ class User(object):
         logger.debug('Unauthorizing: {}'.format(self))
         self.authorized = False
 
+    def next_step(self, step):
+        self.step = step
+
     def json(self):
         return json.dumps(self.__dict__)
 
     def __repr__(self):
-        return 'USER: {ip} ({mac}) lang={lang} \
-                authorized={authorized} code={code} \
-                phone=+{phone} mail_count={mail_count}'.format(**self.__dict__)
+        return ' '.join(('USER: {ip} ({mac}) lang={lang}',
+                         'authorized={authorized} code={code}',
+                         'phone={phone} mail_count={mail_count}'))\
+                         .format(**self.__dict__)
 
 
 class Users(object):
@@ -64,9 +69,9 @@ class Users(object):
         self.memcache = memcache.Client(urls_list)
         self.session_time = session_time
 
-    def add(self, ip, mac, url='/index.html', lang='ru',
-                  code='', mail_count=0, authorized=False):
-        user = User(ip, mac, url, lang, code, mail_count, authorized)
+    def add(self, ip, mac, phone='', url='/index.html', lang='ru',
+                  code='', mail_count=0, authorized=False, step='phone'):
+        user = User(ip, mac, phone, url, lang, code, mail_count, authorized)
         self.memcache.set(user.ip, user.json(), self.session_time)
         return user
 

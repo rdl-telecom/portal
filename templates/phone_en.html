@@ -1,0 +1,24 @@
+        <div class="container-full" id="internet">
+            <div class="site-wrapper">
+                <div class="vertical-center-row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-8 col-xs-12 center-block" id="login-form">
+                                <h1 class="cover-heading">Authorization needed</h1>
+                                <p>Please enter your phone number</p>
+                                <form action="/phone" method="post" class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputEmail3">Phone: </label>
+                                        <input name="phone_number" class="form-control phone-number" id="exampleInputEmail3" placeholder="">
+                                        <input type="hidden" name="lang" value="ru">
+                                    </div>
+                                    <input type="submit" class="btn btn-default" style="margin-top: -7px;" value="Get code">
+                                </form>
+                                <p>By passage of identification process you accept the <span class="dotted showAgreement">agreement on offer</span>.</p>
+                                <p><a href="/entercode.html" class="dotted" id="show-confirm-form">I already have the code</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
